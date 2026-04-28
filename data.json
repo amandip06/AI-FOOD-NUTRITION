@@ -1,0 +1,570 @@
+{
+  "foods": [
+    {
+      "id": 1,
+      "name": "Apple",
+      "aliases": ["apple", "red apple", "green apple", "fuji apple", "granny smith"],
+      "category": "fruit",
+      "emoji": "🍎",
+      "servingSize": 182,
+      "servingUnit": "g (1 medium)",
+      "healthScore": 88,
+      "nutrition": {
+        "calories": 95,
+        "protein": 0.5,
+        "carbohydrates": 25,
+        "fat": 0.3,
+        "fiber": 4.4,
+        "sugar": 19,
+        "sodium": 2,
+        "potassium": 195,
+        "calcium": 11,
+        "iron": 0.2,
+        "vitaminC": 8.4,
+        "vitaminA": 5,
+        "cholesterol": 0
+      },
+      "benefits": [
+        "Rich in antioxidants and quercetin",
+        "Supports gut health with soluble fiber",
+        "May reduce risk of heart disease",
+        "Helps regulate blood sugar levels",
+        "Contains polyphenols that protect brain function"
+      ],
+      "warnings": [
+        "High in natural sugars — moderate for diabetics",
+        "Apple seeds contain amygdalin (avoid eating seeds)"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Banana",
+      "aliases": ["banana", "plantain", "yellow banana"],
+      "category": "fruit",
+      "emoji": "🍌",
+      "servingSize": 118,
+      "servingUnit": "g (1 medium)",
+      "healthScore": 82,
+      "nutrition": {
+        "calories": 105,
+        "protein": 1.3,
+        "carbohydrates": 27,
+        "fat": 0.4,
+        "fiber": 3.1,
+        "sugar": 14,
+        "sodium": 1,
+        "potassium": 422,
+        "calcium": 6,
+        "iron": 0.3,
+        "vitaminC": 10.3,
+        "vitaminA": 4,
+        "cholesterol": 0
+      },
+      "benefits": [
+        "Excellent source of potassium for heart health",
+        "Boosts energy — ideal pre-workout snack",
+        "Contains tryptophan that converts to serotonin",
+        "Green bananas are rich in resistant starch",
+        "Easy to digest and gentle on stomach"
+      ],
+      "warnings": [
+        "High glycemic index — monitor for diabetics",
+        "High in carbohydrates — limit on low-carb diets"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Pizza",
+      "aliases": ["pizza", "cheese pizza", "pepperoni pizza", "margherita", "slice of pizza"],
+      "category": "fast food",
+      "emoji": "🍕",
+      "servingSize": 107,
+      "servingUnit": "g (1 slice)",
+      "healthScore": 42,
+      "nutrition": {
+        "calories": 285,
+        "protein": 12,
+        "carbohydrates": 36,
+        "fat": 10,
+        "fiber": 2.3,
+        "sugar": 3.6,
+        "sodium": 640,
+        "potassium": 184,
+        "calcium": 201,
+        "iron": 2.5,
+        "vitaminC": 2,
+        "vitaminA": 90,
+        "cholesterol": 22
+      },
+      "benefits": [
+        "Good source of calcium from cheese",
+        "Provides quick energy from carbohydrates",
+        "Tomato sauce contains lycopene antioxidant"
+      ],
+      "warnings": [
+        "High in sodium — risk for hypertension",
+        "High calorie density — portion control needed",
+        "Saturated fat from cheese can raise LDL cholesterol",
+        "Refined flour crust has low nutritional value"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Salad",
+      "aliases": ["salad", "green salad", "garden salad", "caesar salad", "mixed greens"],
+      "category": "vegetable",
+      "emoji": "🥗",
+      "servingSize": 200,
+      "servingUnit": "g (1 bowl)",
+      "healthScore": 94,
+      "nutrition": {
+        "calories": 20,
+        "protein": 1.5,
+        "carbohydrates": 3.5,
+        "fat": 0.3,
+        "fiber": 2,
+        "sugar": 1.5,
+        "sodium": 15,
+        "potassium": 230,
+        "calcium": 40,
+        "iron": 1.2,
+        "vitaminC": 28,
+        "vitaminA": 350,
+        "cholesterol": 0
+      },
+      "benefits": [
+        "Very low calorie — excellent for weight management",
+        "Packed with vitamins A, C, and K",
+        "High fiber supports digestive health",
+        "Antioxidants protect against chronic diseases",
+        "Hydrating — lettuce is 95% water"
+      ],
+      "warnings": [
+        "Dressings can significantly increase calorie/fat content",
+        "Wash thoroughly to remove pesticide residue"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Burger",
+      "aliases": ["burger", "hamburger", "cheeseburger", "beef burger", "veggie burger"],
+      "category": "fast food",
+      "emoji": "🍔",
+      "servingSize": 226,
+      "servingUnit": "g (1 burger)",
+      "healthScore": 38,
+      "nutrition": {
+        "calories": 540,
+        "protein": 28,
+        "carbohydrates": 43,
+        "fat": 27,
+        "fiber": 2,
+        "sugar": 8,
+        "sodium": 790,
+        "potassium": 430,
+        "calcium": 150,
+        "iron": 4.5,
+        "vitaminC": 3,
+        "vitaminA": 40,
+        "cholesterol": 85
+      },
+      "benefits": [
+        "High protein content supports muscle repair",
+        "Good source of iron and zinc from beef",
+        "B vitamins support energy metabolism"
+      ],
+      "warnings": [
+        "Very high in sodium — exceeds 30% of daily limit",
+        "High saturated fat raises LDL cholesterol",
+        "Calorie-dense — limit frequency of consumption",
+        "Refined bun is low in fiber and nutrients"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Rice",
+      "aliases": ["rice", "white rice", "brown rice", "cooked rice", "steamed rice"],
+      "category": "grain",
+      "emoji": "🍚",
+      "servingSize": 186,
+      "servingUnit": "g (1 cup cooked)",
+      "healthScore": 68,
+      "nutrition": {
+        "calories": 242,
+        "protein": 4.4,
+        "carbohydrates": 53,
+        "fat": 0.4,
+        "fiber": 0.6,
+        "sugar": 0,
+        "sodium": 0,
+        "potassium": 84,
+        "calcium": 16,
+        "iron": 1.9,
+        "vitaminC": 0,
+        "vitaminA": 0,
+        "cholesterol": 0
+      },
+      "benefits": [
+        "Quick energy source — ideal for athletes",
+        "Naturally gluten-free",
+        "Easy to digest and gentle on gut",
+        "Low in fat and cholesterol"
+      ],
+      "warnings": [
+        "White rice is low in fiber and nutrients",
+        "High glycemic index — spikes blood sugar",
+        "Choose brown rice for more nutrients and fiber"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Egg",
+      "aliases": ["egg", "eggs", "fried egg", "boiled egg", "scrambled egg", "omelette"],
+      "category": "protein",
+      "emoji": "🥚",
+      "servingSize": 50,
+      "servingUnit": "g (1 large egg)",
+      "healthScore": 85,
+      "nutrition": {
+        "calories": 72,
+        "protein": 6.3,
+        "carbohydrates": 0.4,
+        "fat": 4.8,
+        "fiber": 0,
+        "sugar": 0.2,
+        "sodium": 71,
+        "potassium": 69,
+        "calcium": 28,
+        "iron": 0.9,
+        "vitaminC": 0,
+        "vitaminA": 75,
+        "cholesterol": 186
+      },
+      "benefits": [
+        "Complete protein with all essential amino acids",
+        "Rich in choline — vital for brain health",
+        "Contains lutein and zeaxanthin for eye health",
+        "Vitamin D source — important for bone health",
+        "Highly satiating — helps with weight management"
+      ],
+      "warnings": [
+        "High in cholesterol — monitor if heart disease risk",
+        "Raw eggs carry salmonella risk — cook thoroughly",
+        "Egg allergy is common, especially in children"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Chicken Breast",
+      "aliases": ["chicken", "chicken breast", "grilled chicken", "roasted chicken", "boiled chicken"],
+      "category": "protein",
+      "emoji": "🍗",
+      "servingSize": 172,
+      "servingUnit": "g (1 breast)",
+      "healthScore": 90,
+      "nutrition": {
+        "calories": 284,
+        "protein": 53,
+        "carbohydrates": 0,
+        "fat": 6.2,
+        "fiber": 0,
+        "sugar": 0,
+        "sodium": 126,
+        "potassium": 440,
+        "calcium": 15,
+        "iron": 1.3,
+        "vitaminC": 0,
+        "vitaminA": 12,
+        "cholesterol": 151
+      },
+      "benefits": [
+        "Extremely high-protein, low-fat option",
+        "Excellent for muscle building and recovery",
+        "Rich in selenium — powerful antioxidant",
+        "Good source of B vitamins for metabolism",
+        "Versatile and easy to incorporate into meals"
+      ],
+      "warnings": [
+        "Skin increases fat/calorie content significantly",
+        "Processed chicken (nuggets) has added sodium",
+        "Cook to 165°F to prevent Salmonella"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Orange",
+      "aliases": ["orange", "navel orange", "mandarin", "clementine", "citrus"],
+      "category": "fruit",
+      "emoji": "🍊",
+      "servingSize": 131,
+      "servingUnit": "g (1 medium)",
+      "healthScore": 91,
+      "nutrition": {
+        "calories": 62,
+        "protein": 1.2,
+        "carbohydrates": 15.4,
+        "fat": 0.2,
+        "fiber": 3.1,
+        "sugar": 12,
+        "sodium": 0,
+        "potassium": 237,
+        "calcium": 60,
+        "iron": 0.1,
+        "vitaminC": 69.7,
+        "vitaminA": 14,
+        "cholesterol": 0
+      },
+      "benefits": [
+        "Exceptional source of Vitamin C (78% daily value)",
+        "Powerful immune system booster",
+        "Flavonoids protect against heart disease",
+        "Citric acid may prevent kidney stones",
+        "High water content aids hydration"
+      ],
+      "warnings": [
+        "Acidic — may irritate acid reflux or GERD",
+        "Can interact with certain medications (statins)"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Sushi",
+      "aliases": ["sushi", "nigiri", "maki", "sashimi", "california roll", "tuna roll"],
+      "category": "seafood",
+      "emoji": "🍱",
+      "servingSize": 200,
+      "servingUnit": "g (8 pieces)",
+      "healthScore": 80,
+      "nutrition": {
+        "calories": 349,
+        "protein": 15,
+        "carbohydrates": 52,
+        "fat": 8,
+        "fiber": 1.2,
+        "sugar": 6,
+        "sodium": 695,
+        "potassium": 260,
+        "calcium": 28,
+        "iron": 1.8,
+        "vitaminC": 5,
+        "vitaminA": 30,
+        "cholesterol": 35
+      },
+      "benefits": [
+        "Omega-3 fatty acids from fish support heart health",
+        "Nori seaweed is rich in iodine and minerals",
+        "Raw fish provides high-quality lean protein",
+        "Wasabi has antimicrobial and anti-inflammatory properties"
+      ],
+      "warnings": [
+        "High sodium from soy sauce — watch for hypertension",
+        "Raw fish risk for pregnant women and immunocompromised",
+        "Mercury content in tuna — limit consumption"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Avocado",
+      "aliases": ["avocado", "guacamole", "avo"],
+      "category": "fruit",
+      "emoji": "🥑",
+      "servingSize": 150,
+      "servingUnit": "g (1 medium)",
+      "healthScore": 93,
+      "nutrition": {
+        "calories": 240,
+        "protein": 3,
+        "carbohydrates": 13,
+        "fat": 22,
+        "fiber": 10,
+        "sugar": 0.4,
+        "sodium": 11,
+        "potassium": 728,
+        "calcium": 18,
+        "iron": 0.8,
+        "vitaminC": 15,
+        "vitaminA": 21,
+        "cholesterol": 0
+      },
+      "benefits": [
+        "Heart-healthy monounsaturated fats (oleic acid)",
+        "Exceptionally high in potassium (more than banana)",
+        "Loaded with fiber for digestive health",
+        "Improves absorption of fat-soluble vitamins",
+        "Contains folate important for cell function"
+      ],
+      "warnings": [
+        "High in calories — portion control important",
+        "High fat content (though mostly healthy fats)",
+        "Avocado allergy exists in some individuals"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Milk",
+      "aliases": ["milk", "whole milk", "skim milk", "dairy milk", "glass of milk"],
+      "category": "dairy",
+      "emoji": "🥛",
+      "servingSize": 244,
+      "servingUnit": "ml (1 cup)",
+      "healthScore": 78,
+      "nutrition": {
+        "calories": 149,
+        "protein": 8,
+        "carbohydrates": 12,
+        "fat": 8,
+        "fiber": 0,
+        "sugar": 12,
+        "sodium": 105,
+        "potassium": 322,
+        "calcium": 276,
+        "iron": 0.1,
+        "vitaminC": 0,
+        "vitaminA": 112,
+        "cholesterol": 24
+      },
+      "benefits": [
+        "Excellent calcium source for bone health",
+        "High-quality complete protein",
+        "Fortified with vitamin D for calcium absorption",
+        "Riboflavin and B12 support energy metabolism"
+      ],
+      "warnings": [
+        "Lactose intolerance affects ~68% of adults worldwide",
+        "Whole milk is high in saturated fat",
+        "Dairy allergy is distinct from lactose intolerance"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Broccoli",
+      "aliases": ["broccoli", "steamed broccoli", "roasted broccoli"],
+      "category": "vegetable",
+      "emoji": "🥦",
+      "servingSize": 91,
+      "servingUnit": "g (1 cup chopped)",
+      "healthScore": 97,
+      "nutrition": {
+        "calories": 31,
+        "protein": 2.6,
+        "carbohydrates": 6,
+        "fat": 0.3,
+        "fiber": 2.4,
+        "sugar": 1.5,
+        "sodium": 30,
+        "potassium": 288,
+        "calcium": 43,
+        "iron": 0.7,
+        "vitaminC": 81,
+        "vitaminA": 60,
+        "cholesterol": 0
+      },
+      "benefits": [
+        "Sulforaphane may have potent anti-cancer properties",
+        "135% of daily Vitamin C per cup",
+        "Excellent source of Vitamin K for blood clotting",
+        "Supports liver detoxification",
+        "Anti-inflammatory glucosinolates"
+      ],
+      "warnings": [
+        "Can cause bloating and gas in some people",
+        "High Vitamin K may interact with blood thinners"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Pasta",
+      "aliases": ["pasta", "spaghetti", "noodles", "penne", "fettuccine", "linguine"],
+      "category": "grain",
+      "emoji": "🍝",
+      "servingSize": 140,
+      "servingUnit": "g (1 cup cooked)",
+      "healthScore": 60,
+      "nutrition": {
+        "calories": 220,
+        "protein": 8,
+        "carbohydrates": 43,
+        "fat": 1.3,
+        "fiber": 2.5,
+        "sugar": 0.6,
+        "sodium": 1,
+        "potassium": 63,
+        "calcium": 10,
+        "iron": 1.8,
+        "vitaminC": 0,
+        "vitaminA": 0,
+        "cholesterol": 0
+      },
+      "benefits": [
+        "Good source of sustained energy",
+        "B vitamins for energy metabolism",
+        "Low fat content",
+        "Whole grain pasta significantly boosts fiber"
+      ],
+      "warnings": [
+        "High glycemic index spikes blood sugar",
+        "Portion sizes are often underestimated",
+        "Sauce can dramatically increase calories/sodium"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Chocolate",
+      "aliases": ["chocolate", "dark chocolate", "milk chocolate", "chocolate bar"],
+      "category": "dessert",
+      "emoji": "🍫",
+      "servingSize": 40,
+      "servingUnit": "g (1 bar/serving)",
+      "healthScore": 55,
+      "nutrition": {
+        "calories": 216,
+        "protein": 2.7,
+        "carbohydrates": 23,
+        "fat": 13,
+        "fiber": 2.4,
+        "sugar": 19,
+        "sodium": 7,
+        "potassium": 206,
+        "calcium": 44,
+        "iron": 3.3,
+        "vitaminC": 0,
+        "vitaminA": 2,
+        "cholesterol": 7
+      },
+      "benefits": [
+        "Dark chocolate is rich in antioxidants (flavonoids)",
+        "May improve heart health and blood flow",
+        "Magnesium and iron content",
+        "Can improve mood by releasing endorphins"
+      ],
+      "warnings": [
+        "High in sugar and saturated fat",
+        "Calorie-dense — easy to overconsume",
+        "Caffeine content — avoid before sleep",
+        "Toxic to pets (dogs, cats)"
+      ]
+    }
+  ],
+  "dailyValues": {
+    "calories": 2000,
+    "protein": 50,
+    "carbohydrates": 275,
+    "fat": 78,
+    "fiber": 28,
+    "sugar": 50,
+    "sodium": 2300,
+    "potassium": 4700,
+    "calcium": 1300,
+    "iron": 18,
+    "vitaminC": 90,
+    "vitaminA": 900,
+    "cholesterol": 300
+  },
+  "healthScoreGuide": {
+    "90-100": { "label": "Excellent", "color": "#00d4aa", "description": "Nutrient-dense superfood with exceptional health benefits" },
+    "75-89": { "label": "Very Good", "color": "#4ade80", "description": "Highly nutritious with significant health benefits" },
+    "60-74": { "label": "Good", "color": "#a3e635", "description": "Nutritious with moderate health benefits" },
+    "45-59": { "label": "Fair", "color": "#fbbf24", "description": "Some nutritional value but consume in moderation" },
+    "0-44": { "label": "Poor", "color": "#f87171", "description": "Low nutritional value — limit consumption" }
+  }
+}

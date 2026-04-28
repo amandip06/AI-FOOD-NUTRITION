@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NutriScan AI — Intelligent Nutrition Analysis</title>
+  <meta name="description" content="AI-powered food nutrition analysis. Upload a photo or search any food to get complete nutritional breakdown instantly." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Phosphor Icons (lightweight icon set) -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ───────────────────────── NAVBAR ───────────────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">NutriScan<span class="logo-accent">AI</span></span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#scanner" class="nav-link">Scan</a>
+        <a href="#search-section" class="nav-link">Search</a>
+        <a href="#daily-summary" class="nav-link">Daily Log</a>
+      </div>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle dark/light mode">
+          <span class="theme-icon sun">☀</span>
+          <span class="theme-icon moon">☽</span>
+          <span class="toggle-thumb"></span>
+        </button>
+        <button class="nav-cta" onclick="document.getElementById('scanner').scrollIntoView({behavior:'smooth'})">
+          Start Scanning
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ───────────────────────── HERO ───────────────────────── -->
+  <section class="hero" id="home">
+    <div class="hero-bg-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        AI-Powered Nutrition Intelligence
+      </div>
+      <h1 class="hero-title">
+        Know What's<br />
+        <em>Inside</em> Your Food
+      </h1>
+      <p class="hero-subtitle">
+        Upload a photo or search any food to get an instant, detailed nutritional breakdown — calories, macros, vitamins, minerals, health scores, and more.
+      </p>
+
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="document.getElementById('scanner').scrollIntoView({behavior:'smooth'})">
+          <i class="ph ph-camera"></i> Scan Food Photo
+        </button>
+        <button class="btn-ghost" onclick="document.getElementById('search-section').scrollIntoView({behavior:'smooth'})">
+          <i class="ph ph-magnifying-glass"></i> Search Food
+        </button>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-pill"><span class="stat-num">15+</span> Nutrients Tracked</div>
+        <div class="stat-pill"><span class="stat-num">AI</span> Image Analysis</div>
+        <div class="stat-pill"><span class="stat-num">Real-time</span> Results</div>
+      </div>
+    </div>
+
+    <!-- Floating cards decoration -->
+    <div class="hero-cards-demo" aria-hidden="true">
+      <div class="demo-card demo-card-1 glass-card">
+        <span class="demo-emoji">🍎</span>
+        <div>
+          <div class="demo-name">Apple</div>
+          <div class="demo-cal">95 kcal</div>
+        </div>
+        <div class="demo-score score-high">88</div>
+      </div>
+      <div class="demo-card demo-card-2 glass-card">
+        <span class="demo-emoji">🥑</span>
+        <div>
+          <div class="demo-name">Avocado</div>
+          <div class="demo-cal">240 kcal</div>
+        </div>
+        <div class="demo-score score-high">93</div>
+      </div>
+      <div class="demo-card demo-card-3 glass-card">
+        <span class="demo-emoji">🍗</span>
+        <div>
+          <div class="demo-name">Chicken</div>
+          <div class="demo-cal">284 kcal</div>
+        </div>
+        <div class="demo-score score-high">90</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── SCANNER SECTION ───────────────────────── -->
+  <section class="section" id="scanner">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">AI Vision</span>
+        <h2 class="section-title">Scan Your Food</h2>
+        <p class="section-subtitle">Upload a photo or use your camera — our AI will identify the food and provide complete nutritional data</p>
+      </div>
+
+      <!-- Upload Zone -->
+      <div class="upload-zone glass-card" id="uploadZone">
+        <div class="upload-idle" id="uploadIdle">
+          <div class="upload-icon-ring">
+            <i class="ph ph-camera-plus"></i>
+          </div>
+          <h3>Drop your food photo here</h3>
+          <p>Supports JPG, PNG, WEBP — or use camera</p>
+          <div class="upload-buttons">
+            <label class="btn-primary" for="fileInput">
+              <i class="ph ph-upload-simple"></i> Upload Photo
+            </label>
+            <button class="btn-secondary" id="cameraBtn">
+              <i class="ph ph-camera"></i> Use Camera
+            </button>
+          </div>
+          <input type="file" id="fileInput" accept="image/*" hidden />
+        </div>
+
+        <!-- Image Preview -->
+        <div class="upload-preview" id="uploadPreview" style="display:none;">
+          <img id="previewImg" src="" alt="Food preview" />
+          <div class="preview-overlay">
+            <div class="scan-line"></div>
+          </div>
+          <button class="btn-remove" id="removeImg" title="Remove image">
+            <i class="ph ph-x"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Camera Modal -->
+      <div class="modal-overlay" id="cameraModal" style="display:none;">
+        <div class="camera-modal glass-card">
+          <div class="modal-header">
+            <h3><i class="ph ph-camera"></i> Camera Capture</h3>
+            <button class="btn-close" id="closeCameraBtn"><i class="ph ph-x"></i></button>
+          </div>
+          <video id="cameraVideo" autoplay playsinline></video>
+          <canvas id="cameraCanvas" hidden></canvas>
+          <button class="btn-primary btn-capture" id="captureBtn">
+            <i class="ph ph-circle-wavy"></i> Capture Photo
+          </button>
+        </div>
+      </div>
+
+      <!-- Analyze Button -->
+      <div class="analyze-action" id="analyzeAction" style="display:none;">
+        <button class="btn-analyze" id="analyzeBtn">
+          <i class="ph ph-brain"></i>
+          <span>Analyze with AI</span>
+          <div class="btn-shimmer"></div>
+        </button>
+      </div>
+
+      <!-- Analyzing Animation -->
+      <div class="analyzing-state" id="analyzingState" style="display:none;">
+        <div class="analyzing-ring">
+          <div class="ring r1"></div>
+          <div class="ring r2"></div>
+          <div class="ring r3"></div>
+          <i class="ph ph-brain analyzing-icon"></i>
+        </div>
+        <div class="analyzing-text">
+          <span id="analyzingMsg">Analyzing food...</span>
+          <div class="analyzing-dots">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ───────────────────────── SEARCH SECTION ───────────────────────── -->
+  <section class="section" id="search-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Manual Search</span>
+        <h2 class="section-title">Search Any Food</h2>
+        <p class="section-subtitle">Type any food name to instantly get detailed nutrition information</p>
+      </div>
+
+      <div class="search-wrap">
+        <div class="search-box glass-card">
+          <i class="ph ph-magnifying-glass search-icon"></i>
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="e.g. apple, chicken breast, pizza..."
+            autocomplete="off"
+          />
+          <button class="search-clear" id="searchClear" style="display:none;">
+            <i class="ph ph-x"></i>
+          </button>
+        </div>
+        <div class="search-suggestions" id="searchSuggestions"></div>
+      </div>
+
+      <!-- Quick picks -->
+      <div class="quick-picks">
+        <span class="quick-label">Quick picks:</span>
+        <div class="quick-tags" id="quickTags">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── RESULTS SECTION ───────────────────────── -->
+  <section class="section" id="results-section" style="display:none;">
+    <div class="container">
+
+      <!-- Result Header -->
+      <div class="result-header glass-card" id="resultHeader">
+        <div class="result-food-info">
+          <div class="result-emoji" id="resultEmoji">🍎</div>
+          <div>
+            <h2 class="result-name" id="resultName">Food Name</h2>
+            <span class="result-category" id="resultCategory">Category</span>
+          </div>
+        </div>
+
+        <!-- Portion Selector -->
+        <div class="portion-control">
+          <label class="portion-label">Serving Size</label>
+          <div class="portion-selector">
+            <button class="portion-btn" id="portionDown"><i class="ph ph-minus"></i></button>
+            <div class="portion-display">
+              <span class="portion-value" id="portionValue">1</span>
+              <span class="portion-unit" id="portionUnit">serving</span>
+            </div>
+            <button class="portion-btn" id="portionUp"><i class="ph ph-plus"></i></button>
+          </div>
+          <div class="portion-weight" id="portionWeight">182g</div>
+        </div>
+      </div>
+
+      <!-- Health Score -->
+      <div class="health-score-card glass-card">
+        <div class="hs-left">
+          <div class="hs-label">Health Score</div>
+          <div class="hs-value" id="healthScoreValue">88</div>
+          <div class="hs-badge" id="healthScoreBadge">Excellent</div>
+          <p class="hs-desc" id="healthScoreDesc">Nutrient-dense superfood with exceptional health benefits</p>
+        </div>
+        <div class="hs-right">
+          <div class="hs-ring-wrap">
+            <svg class="hs-ring" viewBox="0 0 120 120">
+              <circle class="hs-ring-bg" cx="60" cy="60" r="52" />
+              <circle class="hs-ring-fill" id="healthScoreRing" cx="60" cy="60" r="52"
+                stroke-dasharray="326.7" stroke-dashoffset="326.7" />
+            </svg>
+            <span class="hs-ring-num" id="healthScoreRingNum">88</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calorie & Macros Overview -->
+      <div class="macros-grid">
+        <div class="macro-card glass-card" id="macroCalories">
+          <div class="macro-icon"><i class="ph ph-flame"></i></div>
+          <div class="macro-val" id="macroCalVal">0</div>
+          <div class="macro-label">Calories</div>
+          <div class="macro-unit">kcal</div>
+        </div>
+        <div class="macro-card glass-card" id="macroProtein">
+          <div class="macro-icon"><i class="ph ph-barbell"></i></div>
+          <div class="macro-val" id="macroProtVal">0</div>
+          <div class="macro-label">Protein</div>
+          <div class="macro-unit">grams</div>
+        </div>
+        <div class="macro-card glass-card" id="macroCarbs">
+          <div class="macro-icon"><i class="ph ph-bread"></i></div>
+          <div class="macro-val" id="macroCarbVal">0</div>
+          <div class="macro-label">Carbs</div>
+          <div class="macro-unit">grams</div>
+        </div>
+        <div class="macro-card glass-card" id="macroFat">
+          <div class="macro-icon"><i class="ph ph-drop"></i></div>
+          <div class="macro-val" id="macroFatVal">0</div>
+          <div class="macro-label">Fat</div>
+          <div class="macro-unit">grams</div>
+        </div>
+      </div>
+
+      <!-- Detailed Nutrition -->
+      <div class="nutrition-detail glass-card">
+        <h3 class="detail-title"><i class="ph ph-list-bullets"></i> Full Nutritional Breakdown</h3>
+        <div class="nutrition-rows" id="nutritionRows">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+
+      <!-- Benefits & Warnings -->
+      <div class="bw-grid">
+        <div class="bw-card benefits-card glass-card">
+          <h3><i class="ph ph-check-circle"></i> Health Benefits</h3>
+          <ul id="benefitsList" class="bw-list"></ul>
+        </div>
+        <div class="bw-card warnings-card glass-card">
+          <h3><i class="ph ph-warning"></i> Warnings & Cautions</h3>
+          <ul id="warningsList" class="bw-list"></ul>
+        </div>
+      </div>
+
+      <!-- Add to Daily Log -->
+      <div class="add-log-bar glass-card">
+        <div class="log-info">
+          <i class="ph ph-calendar-plus"></i>
+          <div>
+            <div class="log-title">Add to Daily Log</div>
+            <div class="log-sub">Track your nutrition for the day</div>
+          </div>
+        </div>
+        <button class="btn-primary" id="addToLogBtn">
+          <i class="ph ph-plus"></i> Add Entry
+        </button>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="disclaimer">
+        <i class="ph ph-info"></i>
+        <p>Nutrition values are AI estimates and may not be 100% accurate. Actual values vary based on preparation method, brand, and specific variety. Consult a registered dietitian for personalized advice.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ───────────────────────── DAILY SUMMARY ───────────────────────── -->
+  <section class="section" id="daily-summary">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Today's Log</span>
+        <h2 class="section-title">Daily Nutrition Summary</h2>
+        <p class="section-subtitle">Track your total nutrient intake for the day against recommended daily values</p>
+      </div>
+
+      <div class="daily-empty" id="dailyEmpty">
+        <div class="empty-icon">📊</div>
+        <p>No food logged yet today.<br/>Scan or search food to start tracking.</p>
+      </div>
+
+      <div class="daily-content" id="dailyContent" style="display:none;">
+
+        <!-- Daily Log Entries -->
+        <div class="log-entries glass-card">
+          <div class="log-header-row">
+            <h3><i class="ph ph-list-checks"></i> Today's Foods</h3>
+            <button class="btn-ghost-sm" id="clearLogBtn"><i class="ph ph-trash"></i> Clear</button>
+          </div>
+          <div id="logEntries" class="log-entries-list"></div>
+        </div>
+
+        <!-- Daily Totals -->
+        <div class="daily-totals glass-card">
+          <h3><i class="ph ph-chart-bar"></i> Daily Totals vs. Recommended</h3>
+          <div class="daily-bars" id="dailyBars"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── FOOTER ───────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-icon">⬡</span>
+          <span class="logo-text">NutriScan<span class="logo-accent">AI</span></span>
+        </div>
+        <p class="footer-note">AI-powered nutrition analysis for educational purposes only. Not a substitute for professional medical or dietary advice.</p>
+        <div class="footer-links">
+          <span>© 2025 NutriScan AI</span>
+          <span>·</span>
+          <span>Built with ❤ for healthier living</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
